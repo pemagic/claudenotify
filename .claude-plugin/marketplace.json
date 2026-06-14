@@ -1,0 +1,23 @@
+{
+  "name": "claudenotify-marketplace",
+  "owner": {
+    "name": "AI Assistant",
+    "email": "ai@claudenotify.local"
+  },
+  "metadata": {
+    "description": "Claude Code custom plugins collection.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "claudenotify",
+      "category": "utility",
+      "tags": ["notification", "bark", "hook"],
+      "strict": true,
+      "source": {
+        "source": "github",
+        "repo": "pemagic/claudenotify"
+      }
+    }
+  ]
+}

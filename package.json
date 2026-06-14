@@ -1,0 +1,10 @@
+{
+  "name": "claudenotify",
+  "version": "1.0.0",
+  "description": "Generic notification CLI for Claude Code and Codex",
+  "main": "index.js",
+  "bin": {
+    "claudenotify": "./index.js"
+  },
+  "type": "module"
+}
