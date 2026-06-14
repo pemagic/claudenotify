@@ -14,7 +14,8 @@
   "files": [
     "index.js",
     "README.md",
-    ".claude-plugin"
+    ".claude-plugin",
+    "commands"
   ],
   "repository": {
     "type": "git",
