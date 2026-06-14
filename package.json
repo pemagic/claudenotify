@@ -6,5 +6,23 @@
   "bin": {
     "claudenotify": "./index.js"
   },
-  "type": "module"
+  "type": "module",
+  "files": [
+    "index.js",
+    "README.md",
+    ".claude-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pemagic/claudenotify.git"
+  },
+  "keywords": [
+    "claude",
+    "claudecode",
+    "notification",
+    "bark",
+    "webhook"
+  ],
+  "author": "pemagic",
+  "license": "MIT"
 }
