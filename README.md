@@ -112,13 +112,55 @@
     }
     ```
 
+## 配置管理与验证指令
+
+当您完成插件安装后，有以下两种方式来添加或管理您的 Bark 推送设备：
+
+### 方式一：使用内置的命令行工具（推荐）
+
+本工具提供了一套便捷的 CLI 命令行用于管理配置。
+
+#### 1. (可选) 注册全局命令
+如果您希望可以直接在终端中输入 `claudenotify` 进行管理，您可以在本项目的本地克隆目录下运行：
+```bash
+npm link
+```
+*(注：如果由于目录位置受限或通过应用市场自动下载而找不到项目目录，您可以直接使用方式二手动配置，或者使用绝对路径调用下述命令。)*
+
+#### 2. 配置管理命令
+注册或链接后，您可以在终端直接使用以下命令进行配置：
+*   **添加通知设备**（支持官方 Token ID 或自定义私有 Bark 服务端的完整 URL）：
+    ```bash
+    claudenotify config add-token <Bark-Token-或完整URL>
+    ```
+*   **移除通知设备**：
+    ```bash
+    claudenotify config remove-token <Bark-Token-或完整URL>
+    ```
+*   **列出当前已配置的设备**：
+    ```bash
+    claudenotify config list
+    ```
+*   **发送测试通知（验证连通性）**：
+    ```bash
+    claudenotify test
+    ```
+
 ---
 
-## 常用验证与管理命令
+### 方式二：手动编辑配置文件
 
-在工具根目录下，您可以通过 node 运行以下辅助管理指令：
-*   `node index.js test`：向所有配置的设备发送一条测试消息，用以验证连通性。
-*   `node index.js config list`：列出当前已加载的配置与通知设备。
-*   `node index.js config add-token <token-or-url>`：快速向配置文件添加一个新的 Bark Token 或完整通知 URL。
-*   `node index.js config remove-token <token-or-url>`：从配置文件中移除指定的设备。
+这也是最直接有效的方式，适合不需要使用命令行的用户。
 
+直接创建或编辑您全局家目录下的隐藏配置文件：`~/.claudenotify.json` (Windows 系统通常为 `C:\Users\<您的用户名>\.claudenotify.json`)。
+
+格式模版：
+```json
+{
+  "tokens": [
+    "https://api.day.app/YOUR_BARK_TOKEN_1",
+    "http://10.0.0.5:19902/YOUR_BARK_TOKEN_2"
+  ]
+}
+```
+保存该文件后配置即刻在后台生效，插件在触发 Hook 时会自动加载最新写入的设备列表。
