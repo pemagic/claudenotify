@@ -2,7 +2,9 @@
   "name": "claudenotify",
   "version": "1.0.0",
   "description": "A generic notification integration tool for Claude Code and Codex using Bark GET requests.",
-  "author": "AI Assistant",
+  "author": {
+    "name": "pemagic"
+  },
   "hooks": {
     "Notification": [
       {
