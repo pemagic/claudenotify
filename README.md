@@ -16,29 +16,30 @@
 
 ### 方式一：通过 Claude Code 插件市场一键安装（推荐）
 
-这是最简单、最推荐的安装方式。通过添加 Marketplace 仓库，Claude Code 会自动解析并从 npm 官方源安全拉取 `@pemagic/claudenotify` 并在本地注册 Hook，无需配置 GitHub SSH 密钥权限。
+这是最简单、最推荐的安装方式。Claude Code 会自动从 GitHub 拉取插件并在本地注册 Hook。
 
-1.  **添加插件市场**
+1.  **前置条件（仅需执行一次）**
+    Claude Code 的插件安装器通过 Git SSH 协议拉取 GitHub 仓库。如果您的机器尚未配置 GitHub SSH 信任，请先在终端中运行以下命令，将 Git 的 GitHub 请求强制走 HTTPS，永久生效：
+    ```bash
+    git config --global url."https://github.com/".insteadOf "git@github.com:"
+    ```
+
+2.  **添加插件市场**
     在 Claude Code 的交互式会话中运行以下命令，将本项目作为 Marketplace 添加：
     ```bash
     /plugin marketplace add pemagic/claudenotify
     ```
-2.  **一键安装插件**
+3.  **一键安装插件**
     运行以下命令安装并启用 `claudenotify`：
     ```bash
     /plugin install claudenotify
     ```
-3.  **配置通知设备**
-    创建或编辑全局家目录下的配置文件：`~/.claudenotify.json` (Windows 系统通常为 `C:\Users\<您的用户名>\.claudenotify.json`)。
-    将以下内容复制进去，替换为您自己的 Bark 完整通知 URL（支持配置多个设备）：
-    ```json
-    {
-      "tokens": [
-        "https://api.day.app/your_token_1",
-        "https://your.private.server/token_2"
-      ]
-    }
+4.  **配置通知设备**
+    安装完成后，在 Claude Code 中运行交互式配置向导：
+    ```bash
+    /claudenotify:setup
     ```
+    按提示输入您的 Bark 推送地址即可完成配置。
 
 ---
 
