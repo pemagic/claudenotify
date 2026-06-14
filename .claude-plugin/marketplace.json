@@ -15,8 +15,8 @@
       "tags": ["notification", "bark", "hook"],
       "strict": true,
       "source": {
-        "source": "npm",
-        "package": "@pemagic/claudenotify"
+        "source": "github",
+        "repo": "pemagic/claudenotify"
       }
     }
   ]
