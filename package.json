@@ -4,7 +4,11 @@
   "description": "Generic notification CLI for Claude Code and Codex",
   "main": "index.js",
   "bin": {
-    "claudenotify": "./index.js"
+    "claudenotify": "index.js"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "type": "module",
   "files": [
