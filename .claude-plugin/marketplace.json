@@ -16,7 +16,7 @@
       "strict": true,
       "source": {
         "source": "npm",
-        "package": "claudenotify"
+        "package": "@pemagic/claudenotify"
       }
     }
   ]
